@@ -5,8 +5,9 @@ import Search from "@/components/Index.vue";
 import NewDtp from "@/components/NewDtp.vue";
 
 Vue.use(VueRouter)
-
 const router = new VueRouter({
+    mode:'history',
+    base:'/dynamictp/',
     routes:[
         {
           path:'/',

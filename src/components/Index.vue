@@ -3,7 +3,7 @@
     <h1 >DynamicTp</h1>
     <p>
       To Learn More<br>
-      <a href="http://gaffeyl.com.cn/" target="_blank" rel="noopener">这是一个可动态更改的线程池</a>.
+      <a href="http://gaffeyl.com.cn/?page_id=15" target="_blank" rel="noopener">这是一个可动态更改的线程池</a>.
     </p>
   </div>
 
