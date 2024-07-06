@@ -1,17 +1,35 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <H2>DynamicTp</H2>
+<!--    <img alt="Vue logo" src="./assets/logo.png">-->
+<!--    <HelloWorld msg="Welcome to Your Vue.js App"/>-->
+<!--    <BaseComponent></BaseComponent>-->
+    <Layout></Layout>
+<!--    <RouterLink to="/search">Search-->
+<!--    </RouterLink>-->
+<!--    <RouterLink to="/main">Main-->
+<!--    </RouterLink>-->
+<!--    <RouterView></RouterView>-->
+<!--    <Main></Main>-->
+
   </div>
 </template>
 
 <script>
 import HelloWorld from './components/HelloWorld.vue'
+import Main from "@/components/Main.vue";
+import BaseComponent from './components/BaseComponent.vue'
+import Layout from "@/components/Layout.vue";
+import NewDtp from "./components/NewDtp.vue"
 
 export default {
   name: 'App',
   components: {
-    HelloWorld
+    Layout,
+    Main,
+    HelloWorld,
+    BaseComponent,
+    NewDtp
   }
 }
 </script>
