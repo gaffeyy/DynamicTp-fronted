@@ -25,12 +25,24 @@
           </el-form-item>
           <el-form-item label="阻塞队列名称">
             <el-select v-model="tableData.queueName" placeholder="请选择队列类型">
+              <el-option label="ArrayBlockingQueue" value="ArrayBlockingQueue"></el-option>
               <el-option label="LinkedBlockingQueue" value="LinkedBlockingQueue"></el-option>
-              <el-option label="区域二" value="beijing"></el-option>
+              <el-option label="PriorityBlockingQueue" value="PriorityBlockingQueue"></el-option>
+              <el-option label="DelayQueue" value="DelayQueue"></el-option>
+              <el-option label="SynchronousQueue" value="SynchronousQueue"></el-option>
+              <el-option label="LinkedTransferQueue" value="LinkedTransferQueue"></el-option>
+              <el-option label="LinkedBlockingDeque" value="LinkedBlockingDeque"></el-option>
+
             </el-select>
           </el-form-item>
           <el-form-item label="队列容量">
             <el-input v-model="tableData.capacity"></el-input>
+          </el-form-item>
+          <el-form-item label="队列公平">
+            <el-select v-model="tableData.queueFair" placeholder="是否公平">
+              <el-option label="True" value="True"></el-option>
+              <el-option label="False" value="False"></el-option>
+            </el-select>
           </el-form-item>
           <el-form-item>
 
@@ -44,7 +56,9 @@
           <el-form-item label="拒绝策略">
             <el-select v-model="tableData.rejectHandlerName" placeholder="请选择拒绝策略">
               <el-option label="AbortPolicy" value="AbortPolicy"></el-option>
-              <el-option label="区域二" value="beijing"></el-option>
+              <el-option label="CallerRunsPolicy" value="CallerRunsPolicy"></el-option>
+              <el-option label="DiscardOldestPolicy" value="DiscardOldestPolicy"></el-option>
+              <el-option label="DiscardPolicy" value="DiscardPolicy"></el-option>
             </el-select>
           </el-form-item>
         </el-form>
@@ -93,7 +107,9 @@ export default {
         keepAliveTime: "",
         queueName: "",
         capacity: "",
-        rejectHandlerName: ""
+        rejectHandlerName: "",
+        allowCoreThreadTimeOut:true,
+        queueFair:true
       },
     };
 

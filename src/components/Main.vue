@@ -14,22 +14,22 @@
         <el-table-column
             prop="corePoolSize"
             label="核心线程数"
-            width="150">
+            width="100">
         </el-table-column>
         <el-table-column
             prop="maximumPoolSize"
             label="最大线程数"
-            width="150">
+            width="100">
         </el-table-column>
         <el-table-column
             prop="keepAliveTime"
-            label="线程存活时间"
-            width="150">
+            label="线程存活时间（s）"
+            width="100">
         </el-table-column>
         <el-table-column
             prop="queueName"
-            label="工作队列名称"
-            width="150">
+            label="阻塞队列名称"
+            width="200">
         </el-table-column>
         <el-table-column
             prop="capacity"
@@ -68,21 +68,29 @@
           <el-form-item label="线程存活时间" :label-width="formLabelWidth">
             <el-input v-model="form.keepAliveTime" autocomplete="off"></el-input>
           </el-form-item>
-          <el-form-item label="工作队列名称" :label-width="formLabelWidth">
-            <el-input v-model="form.queueName" autocomplete="off"></el-input>
+          <el-form-item label="阻塞队列名称" :label-width="formLabelWidth">
+            <el-select v-model="form.queueName" placeholder="请选择">
+              <el-option label="ArrayBlockingQueue" value="ArrayBlockingQueue"></el-option>
+              <el-option label="LinkedBlockingQueue" value="LinkedBlockingQueue"></el-option>
+              <el-option label="PriorityBlockingQueue" value="PriorityBlockingQueue"></el-option>
+              <el-option label="DelayQueue" value="DelayQueue"></el-option>
+              <el-option label="SynchronousQueue" value="SynchronousQueue"></el-option>
+              <el-option label="LinkedTransferQueue" value="LinkedTransferQueue"></el-option>
+              <el-option label="LinkedBlockingDeque" value="LinkedBlockingDeque"></el-option>
+            </el-select>
           </el-form-item>
           <el-form-item label="队列容量" :label-width="formLabelWidth">
             <el-input v-model="form.capacity" autocomplete="off"></el-input>
           </el-form-item>
           <el-form-item label="拒绝策略" :label-width="formLabelWidth">
-            <el-input v-model="form.rejectHandlerName" autocomplete="off"></el-input>
-          </el-form-item>
-          <el-form-item label="可选项" :label-width="formLabelWidth">
-            <el-select v-model="form.region" placeholder="请选择活动区域">
-              <el-option label="区域一" value="shanghai"></el-option>
-              <el-option label="区域二" value="beijing"></el-option>
+            <el-select v-model="form.rejectHandlerName" placeholder="请选择">
+              <el-option label="AbortPolicy" value="AbortPolicy"></el-option>
+              <el-option label="CallerRunsPolicy" value="CallerRunsPolicy"></el-option>
+              <el-option label="DiscardOldestPolicy" value="DiscardOldestPolicy"></el-option>
+              <el-option label="DiscardPolicy" value="DiscardPolicy"></el-option>
             </el-select>
           </el-form-item>
+
         </el-form>
         <div slot="footer" class="dialog-footer">
           <el-button @click="dialogFormVisible = false">取 消</el-button>
